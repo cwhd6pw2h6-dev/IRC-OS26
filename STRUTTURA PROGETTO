@@ -1,0 +1,14 @@
+/app
+  page.tsx
+  layout.tsx
+  /api
+    /ai
+      route.ts
+
+/lib
+  prisma.ts
+
+/prisma
+  schema.prisma
+
+.env
