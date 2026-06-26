@@ -3,17 +3,22 @@ export default function Home() {
     <div style={{ padding: 40, fontFamily: "sans-serif" }}>
       <h1>🏗 IRC OS AI</h1>
 
-      <h2>📊 Dashboard</h2>
-      <p>✔ Sistema avviato</p>
+      <h2>📊 Dashboard CEO</h2>
 
-      <h3>🏗 Cantieri</h3>
-      <p>Nessun dato ancora</p>
+      <div>
+        <h3>🏗 Cantieri</h3>
+        <p>Caricamento dati...</p>
+      </div>
 
-      <h3>👷 Operai</h3>
-      <p>Nessun dato ancora</p>
+      <div>
+        <h3>👷 Operai</h3>
+        <p>Caricamento dati...</p>
+      </div>
 
-      <h3>🧠 AI Manager</h3>
-      <p>Pronto per integrazione</p>
+      <div>
+        <h3>🧠 AI Manager</h3>
+        <p>Sistema pronto per integrazione</p>
+      </div>
     </div>
   );
 }
