@@ -1,0 +1,44 @@
+import { prisma } from "@/lib/prisma";
+
+export default async function Home() {
+  const cantieri = await prisma.cantiere.findMany();
+  const operai = await prisma.operaio.findMany();
+
+  const totaleProduttivita =
+    operai.reduce((acc, o) => acc + o.produttivita, 0);
+
+  return (
+    <main style={{ padding: 30, fontFamily: "sans-serif" }}>
+      <h1>🏗 IRC OS AI</h1>
+
+      <section>
+        <h2>📊 Statistiche Generali</h2>
+        <p>Cantieri attivi: {cantieri.length}</p>
+        <p>Operai: {operai.length}</p>
+        <p>Produttività totale: {totaleProduttivita}</p>
+      </section>
+
+      <hr />
+
+      <section>
+        <h2>🏗 Cantieri</h2>
+        {cantieri.map(c => (
+          <div key={c.id}>
+            {c.nome} - {c.stato} - {c.avanzamento}%
+          </div>
+        ))}
+      </section>
+
+      <hr />
+
+      <section>
+        <h2>👷 Operai</h2>
+        {operai.map(o => (
+          <div key={o.id}>
+            {o.nome} - Prod: {o.produttivita}
+          </div>
+        ))}
+      </section>
+    </main>
+  );
+}
